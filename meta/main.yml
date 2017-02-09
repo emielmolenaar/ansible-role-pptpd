@@ -1,0 +1,20 @@
+---
+
+galaxy_info:
+  author: Emiel Molenaar
+  description: Set up a PPTPD server on Debian systems
+  license: MIT
+  min_ansible_version: 2.0
+  platforms:
+    - name: Debian
+      versions:
+        - wheezy
+        - jessie
+        - stretch
+        - sid
+  galaxy_tags:
+    - system
+    - networking
+    - vpn
+    - pptpd
+dependencies: []
