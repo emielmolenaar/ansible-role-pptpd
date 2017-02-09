@@ -21,5 +21,7 @@ pptpd_options:
  - novjccomp
  - nologfd
  - noipx
+ - ms-dns 8.8.8.8
+ - ms-dns 8.8.4.4
 pptpd_users: []
 #- { name: box1, server: pptpd, secret: changeme, ip_addresses: * }
