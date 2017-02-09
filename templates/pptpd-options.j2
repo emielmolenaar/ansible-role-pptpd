@@ -1,0 +1,9 @@
+# {{ ansible_managed }}
+
+# Name of the local system for authentication purposes
+# (must match the second field in /etc/ppp/chap-secrets entries)
+name {{ pptpd_server_name }}
+
+{% for option in pptpd_options %}
+{{ option }}
+{% endfor %}

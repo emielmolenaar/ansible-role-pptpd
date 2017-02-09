@@ -1,0 +1,25 @@
+---
+
+pptpd_packages:
+  - pptpd
+
+pptpd_server_name: pptpd
+pptpd_ensure_ipv4_forwarding: true
+pptpd_local_ip: 10.0.0.1
+pptpd_remote_ip: 10.0.0.100,10.0.0.200
+pptpd_options:
+ - refuse-pap
+ - refuse-chap
+ - refuse-mschap
+ - require-mschap-v2
+ - require-mppe-128
+ - proxyarp
+ - nodefaultroute
+ - lock
+ - nobsdcomp
+ - novj
+ - novjccomp
+ - nologfd
+ - noipx
+pptpd_users: []
+#- { name: box1, server: pptpd, secret: changeme, ip_addresses: * }
