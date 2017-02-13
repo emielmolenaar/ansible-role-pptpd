@@ -9,13 +9,13 @@
    when: (pptpd_ensure_ipv4_forwarding | bool)
 
  - name: Setup /etc/pptpd.conf
-   template: src=pptpd.conf.j2 dest=/etc/pptpd.conf owner=root group=root mode=0644
+   template: src=pptpd.conf.j2 dest=/etc/pptpd.conf owner=root group=root mode=0600
    notify: Restart PPTPD
 
  - name: Setup /etc/ppp/pptpd-options
-   template: src=pptpd-options.j2 dest=/etc/ppp/pptpd-options owner=root group=root mode=0644
+   template: src=pptpd-options.j2 dest=/etc/ppp/pptpd-options owner=root group=root mode=0600
    notify: Restart PPTPD
 
  - name: Setup /etc/ppp/chap-secrets
-   template: src=chap-secrets.j2 dest=/etc/ppp/chap-secrets owner=root group=root mode=0640
+   template: src=chap-secrets.j2 dest=/etc/ppp/chap-secrets owner=root group=root mode=0600
    notify: Restart PPTPD
