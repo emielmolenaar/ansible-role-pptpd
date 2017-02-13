@@ -6,7 +6,7 @@ pptpd_packages:
 pptpd_server_name: pptpd
 pptpd_ensure_ipv4_forwarding: true
 pptpd_local_ip: 10.0.0.1
-pptpd_remote_ip: 10.0.0.100,10.0.0.200
+pptpd_remote_ip: 10.0.0.100-200
 pptpd_options:
  - refuse-pap
  - refuse-chap
