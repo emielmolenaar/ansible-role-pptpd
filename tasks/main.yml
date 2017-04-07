@@ -4,10 +4,6 @@
    apt: name="{{ item }}" state=installed update_cache=yes cache_valid_time=86400
    with_items: "{{ pptpd_packages }}"
 
- - name: Setup IP forwarding if configured
-   sysctl: name=net.ipv4.ip_forward value=1 sysctl_set=yes state=present reload=yes
-   when: (pptpd_ensure_ipv4_forwarding | bool)
-
  - name: Setup /etc/pptpd.conf
    template: src=pptpd.conf.j2 dest=/etc/pptpd.conf owner=root group=root mode=0600
    notify: Restart PPTPD
@@ -19,3 +15,10 @@
  - name: Setup /etc/ppp/chap-secrets
    template: src=chap-secrets.j2 dest=/etc/ppp/chap-secrets owner=root group=root mode=0600
    notify: Restart PPTPD
+
+ - name: Setup IP forwarding if configured
+   sysctl: name=net.ipv4.ip_forward value=1 sysctl_set=yes state=present reload=yes
+   when: (pptpd_ensure_ipv4_forwarding | bool)
+
+ - name: Ensure PPTPD service is started and enabled to start at boot
+   service: name="{{ pptpd_service_name }}" state=started enabled=yes

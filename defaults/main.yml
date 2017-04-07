@@ -1,5 +1,6 @@
 ---
 
+pptpd_service_name: pptpd
 pptpd_packages:
   - pptpd
 
