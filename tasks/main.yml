@@ -21,4 +21,4 @@
    when: (pptpd_ensure_ipv4_forwarding | bool)
 
  - name: Ensure PPTPD service is started and enabled to start at boot
-   service: name="{{ pptpd_service_name }}" state=started enabled=yes
+   systemd: name="{{ pptpd_service_name }}" state=started enabled=yes
