@@ -1,8 +1,7 @@
 ---
 
  - name: Ensure PPTPD packages are installed
-   apt: name="{{ item }}" state=installed update_cache=yes cache_valid_time=86400
-   with_items: "{{ pptpd_packages }}"
+   apt: name="{{ pptpd_packages }}" state=latest update_cache=yes
 
  - name: Setup /etc/pptpd.conf
    template: src=pptpd.conf.j2 dest=/etc/pptpd.conf owner=root group=root mode=0600
